@@ -25,7 +25,6 @@ enum layers {
     _ADJUST,
 };
 
-
 // Aliases for readability
 #define QWERTY   DF(_QWERTY)
 #define COLEMAK  DF(_COLEMAK_DH)
@@ -104,11 +103,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        |      |      | Enter|      |      |  |      |      |      |      |      |
  *                        `----------------------------------'  `----------------------------------'
  */
+#define CTL_ESC  MT(MOD_LCTL, KC_ESC)
+#define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
+#define CTL_MINS MT(MOD_RCTL, KC_MINUS)
+#define ALT_ENT  MT(MOD_LALT, KC_ENT)
+#define SFT_UP   MT(MOD_RSFT, KC_UP)
     [_COLEMAK_DH] = LAYOUT(
      KC_ESC  , KC_Q ,  KC_W   ,  KC_F  ,   KC_P ,   KC_B ,                                        KC_J,   KC_L ,  KC_U ,   KC_Y ,KC_SCLN, KC_BSPC,
-     KC_TAB , KC_A ,  KC_R   ,  KC_S  ,   KC_T ,   KC_G ,                                        KC_M,   KC_N ,  KC_E ,   KC_I ,  KC_O , CTL_QUOT,
+     KC_TAB  , KC_A ,MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_S),MT(MOD_LCTL, KC_T),KC_G,             KC_M,   MT(MOD_RCTL, KC_N),  MT(MOD_RSFT, KC_E) ,   MT(MOD_RALT, KC_I) ,  KC_O , CTL_QUOT,
      KC_LSFT , KC_Z ,  KC_X   ,  KC_C  ,   KC_D ,   KC_V , FKEYS,KC_TRNS,     KC_TRNS, KC_TRNS, KC_K,   KC_H ,KC_COMM, KC_DOT ,KC_SLSH, SFT_UP,
-                                 KC_LEFT, KC_RIGHT, KC_DOWN, _______, KC_SPC,     KC_SPC, SYM ,KC_RALT, KC_RGUI, KC_ENT
+                                 DT_DOWN, DT_UP, DT_PRNT, _______, KC_SPC,     KC_SPC, SYM ,KC_RALT, KC_RGUI, KC_ENT
     ),
 
 /*
