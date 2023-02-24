@@ -36,4 +36,5 @@
 // Lets you roll mod-tap keys
 #define IGNORE_MOD_TAP_INTERRUPT
 //Mod-tap config
-#define TAPPING_TERM 200
+#define TAPPING_TERM 240
+#define MASTER_RIGHT
